@@ -1,0 +1,130 @@
+/*
+** Color Scheme
+** Purple: #7A3E48
+** Matte Yellow: #EECD86
+** Orange: #E18942
+** Darker Orange: #B95835
+** Dark Purple: #3D3242
+*/
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  background-color: #EECD86;
+}
+
+header {
+  background-color: #7A3E48;
+}
+
+h3 {
+  margin: 0px;
+  font-weight: 50;
+}
+
+h2 {
+  margin: 0px;
+  font-weight: 70;
+}
+
+p {
+  margin: 0px;
+}
+
+.injection-container {
+  margin: 1em;
+}
+
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 10px 20px;
+  margin: 5px 0px;
+  display: inline-block;
+  border: 1px solid #7A3E48;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  border: 2px solid #7A3E48;
+  padding: 9px 20px;
+  outline: none;
+}
+input[type=submit] {
+  width: 50%;
+  background-color: #7A3E48;
+  color: #E18942;
+  padding: 10px 20px;
+  margin: 5px 0px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #3D3242;
+}
+
+.header-text {
+  color: #E18942;
+  padding: 3px;
+}
+
+footer {
+  width: 100%;
+  height: 40%;
+  padding: 0px;
+  position: absolute;
+  bottom: 0;
+}
+
+.tab-container {
+  display: flex;
+  background-color: #7A3E48;
+}
+
+.tool-tab-text {
+  width: 4em;
+  color: #E18942;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #E18942;
+}
+
+button:hover {
+  background-color: #E18942;
+  color: #7A3E48;
+}
+
+.syntax-viewer-content {
+  height: 80%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.hide {
+  margin-left: auto;
+}
+
+.paragraph {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+.help-text {
+  margin: 3px 0px;
+}
+
+.active {
+  background-color: #E18942;
+  color: #7A3E48;
+}
+
+.hidden {
+  display: none;
+}
