@@ -34,18 +34,18 @@
       <div class="tools-container">
         <div class="tab-container">
           <div class="tool-tab-text"><center><h3>Tools</h3></center></div>
-          <button id="viewer-btn" class="active" type="button" name="Syntax Viewer">Syntax Viewer</button>
+          <button id="viewer-btn" type="button" name="Syntax Viewer">Syntax Viewer</button>
           <button id="options-btn" type="button" name="Options">Options</button>
           <button id="hide-btn" class="hide" type="button" name="Hide">Hide</button>
         </div>
-        <div id="syntax-viewer-window">
-          <div class="tab-container">
-            <button id="select-btn" type="button" name="Select">SELECT</button>
-            <button id="union-btn" type="button" name="Union">UNION</button>
-            <button id="update-btn" type="button" name="Update">UPDATE</button>
-            <button id="insert-btn" type="button" name="Insert">INSERT</button>
-            <button id="alter-btn" type="button" name="Alter">ALTER</button>
-            <button id="drop-btn" type="button" name="Drop">DROP</button>
+        <div id="syntax-viewer-window" class="hidden">
+          <div id="viewer-tab-container" class="tab-container">
+            <button id="select-btn" class="viewer-tab-btn" type="button" name="Select">SELECT</button>
+            <button id="union-btn" class="viewer-tab-btn" type="button" name="Union">UNION</button>
+            <button id="update-btn" class="viewer-tab-btn" type="button" name="Update">UPDATE</button>
+            <button id="insert-btn" class="viewer-tab-btn" type="button" name="Insert">INSERT</button>
+            <button id="alter-btn" class="viewer-tab-btn" type="button" name="Alter">ALTER</button>
+            <button id="drop-btn" class="viewer-tab-btn" type="button" name="Drop">DROP</button>
           </div>
           <div class="hidden syntax-viewer-content" id="select-content">
             <div class="paragraph">
@@ -94,7 +94,7 @@
               <p class="help-text">This will return all of the columns in the users database and all of the columns in the things database. Since the user database only has 4 columns while the things table has 6 columns the *,1,2 is necessary since it arbitrarily adds a column for each comma.</p>
             </div>
           </div>
-          <div class="syntax-viewer-content" id="update-content">
+          <div class=" hidden syntax-viewer-content" id="update-content">
             <h2 class="help-text">Syntax</h2>
             <h3 class="help-text">UPDATE `table` SET column=value WHERE `condition`</h3>
             <p class="help-text">Updates a table by setting new values to a column (or number of columns) where a condition is met.</p>
@@ -103,4 +103,6 @@
       </div>
     </footer>
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="./index.js"></script>
 </html>
