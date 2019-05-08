@@ -23,6 +23,14 @@ $('#options-btn').click(makeOptionsActive);
 
 function hideToolbar() {
   $('footer').addClass('hidden');
+  $('#open-btn').removeClass('hidden');
+  $('#open-btn').one('click', openToolbar);
 }
 
-$('#hide-btn').click(hideToolbar);
+function openToolbar() {
+  $(this).addClass('hidden');
+  $('footer').removeClass('hidden');
+  $('#hide-btn').one('click', hideToolbar);
+}
+
+$('#open-btn').one('click', openToolbar);

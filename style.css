@@ -137,3 +137,10 @@ button:hover {
 .hidden {
   display: none;
 }
+
+.open-btn {
+  background-color: #D73F09;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
