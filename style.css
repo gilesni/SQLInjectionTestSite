@@ -1,21 +1,22 @@
 /*
 ** Color Scheme
-** Purple: #7A3E48
-** Matte Yellow: #EECD86
-** Orange: #E18942
-** Darker Orange: #B95835
-** Dark Purple: #3D3242
+** Orange: #D73F09
+** grey: #D6D1CE
+** Light grey: #E3E0DD
 */
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: Verdana, Geneva, sans-serif;
   margin: 0;
-  background-color: #EECD86;
+  background-color: white;
 }
 
 header {
-  background-color: #7A3E48;
+  background-color: #D73F09;
 }
+
+
 
 h3 {
   margin: 0px;
@@ -32,28 +33,30 @@ p {
 }
 
 .injection-container {
-  margin: 1em;
+  margin-left: 20%;
+  margin-right: 20%;
+  min-width: 50%;
 }
 
 input[type=text], input[type=password] {
-  width: 50%;
+  min-width: 90%;
   padding: 10px 20px;
   margin: 5px 0px;
   display: inline-block;
-  border: 1px solid #7A3E48;
+  border: 1px solid black;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
 input[type=text]:focus, input[type=password]:focus {
-  border: 2px solid #7A3E48;
+  border: 2px solid #D73F09;
   padding: 9px 20px;
   outline: none;
 }
 input[type=submit] {
-  width: 50%;
-  background-color: #7A3E48;
-  color: #E18942;
+  width: 90%;
+  background-color: #D73F09;
+  color: black;
   padding: 10px 20px;
   margin: 5px 0px;
   border: none;
@@ -62,12 +65,13 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #3D3242;
+  background-color: grey;
 }
 
 .header-text {
-  color: #E18942;
+  color: black;
   padding: 3px;
+  margin-top: 0px;
 }
 
 footer {
@@ -76,16 +80,19 @@ footer {
   padding: 0px;
   position: absolute;
   bottom: 0;
+  background-color: #E3E0DD;
 }
 
 .tab-container {
   display: flex;
-  background-color: #7A3E48;
+  background-color: #D73F09;
 }
+
+.tools-
 
 .tool-tab-text {
   width: 4em;
-  color: #E18942;
+  color: white;
 }
 
 button {
@@ -93,12 +100,12 @@ button {
   background: none;
   cursor: pointer;
   font-size: 20px;
-  color: #E18942;
+  color: white;
 }
 
 button:hover {
-  background-color: #E18942;
-  color: #7A3E48;
+  background-color: grey;
+  color: white;
 }
 
 .syntax-viewer-content {
@@ -121,8 +128,8 @@ button:hover {
 }
 
 .active {
-  background-color: #E18942;
-  color: #7A3E48;
+  background-color: #D73F09;
+  color: black;
 }
 
 .hidden {
