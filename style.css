@@ -11,10 +11,8 @@ body {
   /* font-family: Verdana, Geneva, sans-serif; */
   margin: 0;
   background-color: #565656;
-  background-image: url(background_sm.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 110%;
+  background: url(background_sm.jpg) center fixed no-repeat;
+  background-size: cover;
   overflow-y: hidden;
 }
 
