@@ -6,7 +6,7 @@
 
     <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> -->
 
-	
+
 
     <link rel="stylesheet" href="style.css">
   </head>
@@ -32,75 +32,73 @@
       <p class="hidden" id="response-text"></p>
     </main>
 
-    <footer>
-      <div class="tools-container">
-        <div class="tab-container">
-          <div class="tool-tab-text"><center><h3>Tools</h3></center></div>
-          <button id="viewer-btn" type="button" name="Syntax Viewer">Syntax Viewer</button>
-          <button id="options-btn" type="button" name="Options">Options</button>
-          <button id="hide-btn" class="hide" type="button" name="Hide">Hide</button>
+    <footer class="tools-container">
+      <div class="tab-container">
+        <div class="tool-tab-text"><center><h3>Tools</h3></center></div>
+        <button id="viewer-btn" type="button" name="Syntax Viewer">Syntax Viewer</button>
+        <button id="options-btn" type="button" name="Options">Options</button>
+        <button id="hide-btn" class="hide" type="button" name="Hide">Hide</button>
+      </div>
+      <div id="syntax-viewer-window" class="hidden">
+        <div id="viewer-tab-container" class="tab-container">
+          <button id="select-btn" class="viewer-tab-btn" type="button" name="Select">SELECT</button>
+          <button id="union-btn" class="viewer-tab-btn" type="button" name="Union">UNION</button>
+          <button id="update-btn" class="viewer-tab-btn" type="button" name="Update">UPDATE</button>
+          <button id="insert-btn" class="viewer-tab-btn" type="button" name="Insert">INSERT</button>
+          <button id="alter-btn" class="viewer-tab-btn" type="button" name="Alter">ALTER</button>
+          <button id="drop-btn" class="viewer-tab-btn" type="button" name="Drop">DROP</button>
         </div>
-        <div id="syntax-viewer-window" class="hidden">
-          <div id="viewer-tab-container" class="tab-container">
-            <button id="select-btn" class="viewer-tab-btn" type="button" name="Select">SELECT</button>
-            <button id="union-btn" class="viewer-tab-btn" type="button" name="Union">UNION</button>
-            <button id="update-btn" class="viewer-tab-btn" type="button" name="Update">UPDATE</button>
-            <button id="insert-btn" class="viewer-tab-btn" type="button" name="Insert">INSERT</button>
-            <button id="alter-btn" class="viewer-tab-btn" type="button" name="Alter">ALTER</button>
-            <button id="drop-btn" class="viewer-tab-btn" type="button" name="Drop">DROP</button>
-          </div>
-          <div class="hidden syntax-viewer-content" id="select-content">
-            <div class="paragraph">
-              <h2 class="help-text">Syntax</h2>
-              <p class="help-text">SELECT `columns` FROM `table`</p>
-              <p class="help-text">columns: This can range from specific column names to everything in the table. More than one option can be searched with use of a comma.</p>
-              <p class="help-text">table: The name of the table to be searched.</p>
-            </div>
-            <div class="paragraph">
-              <h2 class="help-text">Examples</h2>
-              <h3 class="help-text">SELECT * FROM users</h3>
-              <p class="help-text">Selects every entry from the users table</p>
-              <h3 class="help-text">SELECT username, password FROM users</h3>
-              <p class="help-text">Selects the username and password columns from the users table.</p>
-            </div>
-            <div class="paragraph">
-              <h2 class="help-text">Additional Options</h2>
-              <h3 class="help-text">WHERE</h3>
-              <p class="help-text">This allows the select query to specify the value of the columns it is querying.</p>
-              <h3 class="help-text">AND, OR, NOT</h3>
-              <p class="help-text">Allows for multiple WHERE calls to be chained with the either AND, OR, or NOT logic.</p>
-              <h3 class="help-text">LIMIT</h3>
-              <p class="help-text">Limits then number of values the query returns.</p>
-              <h3 class="help-text">OFFSET</h3>
-              <p class="help-text">Adds an offset to the value being returned. OFFSET will not work without a LIMIT call.</p>
-            </div>
-            <div class="paragraph">
-              <h2 class="help-text">Examples</h2>
-              <h3 class="help-text">SELECT * FROM users WHERE column=value</h3>
-              <p class="help-text">Selects every entry from the users table where the column is equal to the value./p>
-              <h3 class="help-text">SELECT name FROM items WHERE color=blue OR size=small</h3>
-              <p class="help-text">Returns the item from the things table where the color is equal to blue or the size is equal to small.</p>
-              <h3 class="help-text">SELECT username FROM users LIMIT 1 OFFSET 1</h3>
-              <p class="help-text">Returns the username of the second user in the database.</p>
-            </div>
-          </div>
-          <div class= "hidden syntax-viewer-content" id="union-content">
-            <div class="paragraph">
-              <h2 class="help-text">Syntax</h2>
-              <h3 class="help-text">`select query` UNION `select query`</h3>
-              <p class="help-text">The UNION command combines two SELECT queries and returns the result of both. It is important to note that the UNION call only works if the number of columns of both select queries are the same.</p>
-            </div>
-            <div class="paragraph">
-              <h2 class="help-text">Examples</h2>
-              <h3 class="help-text">SELECT *,1,2 FROM users UNION SELECT * FROM things.</h3>
-              <p class="help-text">This will return all of the columns in the users database and all of the columns in the things database. Since the user database only has 4 columns while the things table has 6 columns the *,1,2 is necessary since it arbitrarily adds a column for each comma.</p>
-            </div>
-          </div>
-          <div class=" hidden syntax-viewer-content" id="update-content">
+        <div class="hidden syntax-viewer-content" id="select-content">
+          <div class="paragraph">
             <h2 class="help-text">Syntax</h2>
-            <h3 class="help-text">UPDATE `table` SET column=value WHERE `condition`</h3>
-            <p class="help-text">Updates a table by setting new values to a column (or number of columns) where a condition is met.</p>
+            <p class="help-text">SELECT `columns` FROM `table`</p>
+            <p class="help-text">columns: This can range from specific column names to everything in the table. More than one option can be searched with use of a comma.</p>
+            <p class="help-text">table: The name of the table to be searched.</p>
           </div>
+          <div class="paragraph">
+            <h2 class="help-text">Examples</h2>
+            <h3 class="help-text">SELECT * FROM users</h3>
+            <p class="help-text">Selects every entry from the users table</p>
+            <h3 class="help-text">SELECT username, password FROM users</h3>
+            <p class="help-text">Selects the username and password columns from the users table.</p>
+          </div>
+          <div class="paragraph">
+            <h2 class="help-text">Additional Options</h2>
+            <h3 class="help-text">WHERE</h3>
+            <p class="help-text">This allows the select query to specify the value of the columns it is querying.</p>
+            <h3 class="help-text">AND, OR, NOT</h3>
+            <p class="help-text">Allows for multiple WHERE calls to be chained with the either AND, OR, or NOT logic.</p>
+            <h3 class="help-text">LIMIT</h3>
+            <p class="help-text">Limits then number of values the query returns.</p>
+            <h3 class="help-text">OFFSET</h3>
+            <p class="help-text">Adds an offset to the value being returned. OFFSET will not work without a LIMIT call.</p>
+          </div>
+          <div class="paragraph">
+            <h2 class="help-text">Examples</h2>
+            <h3 class="help-text">SELECT * FROM users WHERE column=value</h3>
+            <p class="help-text">Selects every entry from the users table where the column is equal to the value./p>
+            <h3 class="help-text">SELECT name FROM items WHERE color=blue OR size=small</h3>
+            <p class="help-text">Returns the item from the things table where the color is equal to blue or the size is equal to small.</p>
+            <h3 class="help-text">SELECT username FROM users LIMIT 1 OFFSET 1</h3>
+            <p class="help-text">Returns the username of the second user in the database.</p>
+          </div>
+        </div>
+        <div class= "hidden syntax-viewer-content" id="union-content">
+          <div class="paragraph">
+            <h2 class="help-text">Syntax</h2>
+            <h3 class="help-text">`select query` UNION `select query`</h3>
+            <p class="help-text">The UNION command combines two SELECT queries and returns the result of both. It is important to note that the UNION call only works if the number of columns of both select queries are the same.</p>
+          </div>
+          <div class="paragraph">
+            <h2 class="help-text">Examples</h2>
+            <h3 class="help-text">SELECT *,1,2 FROM users UNION SELECT * FROM things.</h3>
+            <p class="help-text">This will return all of the columns in the users database and all of the columns in the things database. Since the user database only has 4 columns while the things table has 6 columns the *,1,2 is necessary since it arbitrarily adds a column for each comma.</p>
+          </div>
+        </div>
+        <div class=" hidden syntax-viewer-content" id="update-content">
+          <h2 class="help-text">Syntax</h2>
+          <h3 class="help-text">UPDATE `table` SET column=value WHERE `condition`</h3>
+          <p class="help-text">Updates a table by setting new values to a column (or number of columns) where a condition is met.</p>
         </div>
       </div>
     </footer>
