@@ -34,19 +34,18 @@
       <div class="tools-container">
         <div class="tab-container">
           <div class="tool-tab-text"><center><h3>Tools</h3></center></div>
-          <button class="active" type="button" name="Syntax Viewer">Syntax Viewer</button>
-          <button type="button" name="Syntax Builder">Syntax Builder</button>
-          <button type="button" name="Options">Options</button>
-          <button class="hide" type="button" name="Hide">Hide</button>
+          <button id="viewer-btn" class="active" type="button" name="Syntax Viewer">Syntax Viewer</button>
+          <button id="options-btn" type="button" name="Options">Options</button>
+          <button id="hide-btn" class="hide" type="button" name="Hide">Hide</button>
         </div>
         <div id="syntax-viewer-window">
           <div class="tab-container">
-            <button type="button" name="Select">SELECT</button>
-            <button type="button" name="Union">UNION</button>
-            <button type="button" name="Update">UPDATE</button>
-            <button type="button" name="Insert">INSERT</button>
-            <button type="button" name="Alter">ALTER</button>
-            <button type="button" name="Drop">DROP</button>
+            <button id="select-btn" type="button" name="Select">SELECT</button>
+            <button id="union-btn" type="button" name="Union">UNION</button>
+            <button id="update-btn" type="button" name="Update">UPDATE</button>
+            <button id="insert-btn" type="button" name="Insert">INSERT</button>
+            <button id="alter-btn" type="button" name="Alter">ALTER</button>
+            <button id="drop-btn" type="button" name="Drop">DROP</button>
           </div>
           <div class="hidden syntax-viewer-content" id="select-content">
             <div class="paragraph">
