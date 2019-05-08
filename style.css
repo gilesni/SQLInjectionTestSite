@@ -20,6 +20,7 @@ body {
 
 header {
   background-color: #D73F09;
+  text-align: center;
 }
 
 :focus { outline: none; }
@@ -77,8 +78,11 @@ input[type=submit]:hover {
 
 .header-text {
   color: white;
+<<<<<<< HEAD
   font-weight: 400;
   text-align: center;
+=======
+>>>>>>> 4170d0fa1434bc745d4f0fec43a0baf6600adc1f
   padding: 3px;
   margin-top: 0px;
 }
