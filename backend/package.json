@@ -1,0 +1,28 @@
+{
+  "name": "sqlinjectiontestsite",
+  "version": "1.0.0",
+  "description": "A website designed to allow for different types of sql injection attacks to allow for education of how the attack works and ways to prevent it.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/gilesni/SQLInjectionTestSite"
+  },
+  "keywords": [
+    "sql",
+    "sqlinjection",
+    "node",
+    "express"
+  ],
+  "author": "gilesni, brenisec, hoskinsc",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "mysql": "^2.17.1"
+  }
+}
