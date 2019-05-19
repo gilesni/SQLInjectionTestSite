@@ -60,9 +60,9 @@ app.post('/send', (req, res, next) => {
     });
 });
 
-function checkLogin (mysqlPool, uname, pwd) {
+function checkLogin (mysqlpool, uname, pwd) {
   return new Promise((resolve, reject) => {
-    var sqlString = 'SELECT * FROM users WHERE username=' + uname + ' AND password=' + pwd;
+    var sqlString = "SELECT * FROM users WHERE username='" + uname + "' AND password='" + pwd + "'";
     mysqlpool.query(sqlString, (err, results) => {
       if (err) {
         reject(err);
@@ -84,5 +84,5 @@ function checkLogin (mysqlPool, uname, pwd) {
 }
 
 app.get('*', function(req, res) {
-  res.status(404).render('404Page');
+  res.status(404);
 });

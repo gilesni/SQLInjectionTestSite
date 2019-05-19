@@ -1,3 +1,5 @@
+var url = window.location.origin;
+
 function makeViewerTabActive() {
   var btnName = $(this).text().toLowerCase();
   $('#viewer-tab-container').children().removeClass('active');
@@ -7,6 +9,8 @@ function makeViewerTabActive() {
 }
 
 function makeViewerActive() {
+  $('#options-viewer-window').addClass('hidden');
+  $('#viewer-tab-container').removeClass('hidden');
   $('#syntax-viewer-window').removeClass('hidden');
   $('.viewer-tab-btn').click(makeViewerTabActive);
   $('#options-btn').removeClass('active');
@@ -16,7 +20,12 @@ function makeViewerActive() {
 $('#viewer-btn').click(makeViewerActive);
 
 function makeOptionsActive() {
-
+  $('#viewer-tab-container').addClass('hidden');
+  $('.viewer-tab-btn').removeClass('active');
+  $('.syntax-viewer-content').addClass('hidden');
+  $('#options-viewer-window').removeClass('hidden');
+  $('#viewer-btn').removeClass('active');
+  $('#options-btn').addClass('active');
 }
 
 $('#options-btn').click(makeOptionsActive);
@@ -34,3 +43,23 @@ function openToolbar() {
 }
 
 $('#open-btn').one('click', openToolbar);
+
+function sendData() {
+  var username = $('#uname-input').val();
+  var password = $('#pwd-input').val();
+  var data = {
+    username: username,
+    password: password
+  }
+  console.log(username, password);
+  $.ajax({
+    url: url + "/send",
+    method: "post",
+    data: data,
+    success: () => {
+      console.log("Sent object: " + data);
+    }
+  });
+}
+
+$('#login-btn').click(sendData);
