@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>SQL Injection</title>
 
-    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 
 
@@ -95,9 +95,56 @@
           </div>
         </div>
         <div class=" hidden syntax-viewer-content" id="update-content">
+          <div class="paragraph">
           <h2 class="help-text">Syntax</h2>
           <h3 class="help-text">UPDATE `table` SET column=value WHERE `condition`</h3>
           <p class="help-text">Updates a table by setting new values to a column (or number of columns) where a condition is met.</p>
+          </div>
+          <div class="paragraph">
+            <h2 class="help-text">Examples</h2>
+            <h3 class="help-text">UPDATE users SET password='hunter2' WHERE username='bnybvr'</h3>
+            <p class="help-text">This will change the password of whomever has the username "bnybvr" to "hunter2".</p>
+          </div>
+        </div>
+        <div class=" hidden syntax-viewer-content" id="insert-content">
+          <div class="paragraph">
+          <h2 class="help-text">Syntax</h2>
+          <h3 class="help-text">INSERT INTO `table` (columnA, columnB, columnC, ...) VALUES ('valueA', 'valueB', 'valueC', ...)</h3>
+          <p class="help-text">Inserts into an existing table additional data. Does not by itself change existing data. You don't need to have input for every column in the table.</p>
+          </div>
+          <div class="paragraph">
+            <h2 class="help-text">Examples</h2>
+            <h3 class="help-text">INSERT INTO users (username, password, realname) VALUES ('bnybvr', 'gobeavs', 'Benny the Beaver')</h3>
+            <p class="help-text">This will create a new row in the table with the values associated to each column.</p>
+          </div>
+        </div>
+        <div class=" hidden syntax-viewer-content" id="alter-content">
+          <div class="paragraph">
+          <h2 class="help-text">Syntax</h2>
+          <h3 class="help-text">ALTER TABLE `table` ADD/DROP/MODIFY 'column' 'datatype'</h3>
+          <p class="help-text">Creates a new column, removes an existing column, or modifies an existing column in an existing table.</p>
+          </div>
+          <div class="paragraph">
+            <h2 class="help-text">Examples</h2>
+            <h3 class="help-text">ALTER TABLE users ADD address varchar(127)</h3>
+            <p class="help-text">This will create a new column in users named "Address" with a datatype of "varchar(127)".</p>
+            <h3 class="help-text">ALTER TABLE users DROP favColor</h3>
+            <p class="help-text">This will remove the column favColor from the table.</p>
+            <h3 class="help-text">ALTER TABLE users MODIFY password int(255)</h3>
+            <p class="help-text">This will change the datatype of the "password" column from whatever it was to only integers.</p>
+          </div>
+        </div>
+        <div class=" hidden syntax-viewer-content" id="drop-content">
+          <div class="paragraph">
+          <h2 class="help-text">Syntax</h2>
+          <h3 class="help-text">DROP TABLE 'table'</h3>
+          <p class="help-text">This will remove the specified table <b>and all its data (!!!) </b> from the database</p>
+          </div>
+          <div class="paragraph">
+            <h2 class="help-text">Examples</h2>
+            <h3 class="help-text">DROP TABLE users</h3>
+            <p class="help-text">This will remove the table of users and all their data from the database. <i>SO BE CAREFUL.</i></p>
+          </div>
         </div>
       </div>
     </footer>
