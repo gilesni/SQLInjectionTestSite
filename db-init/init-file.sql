@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS `items`
+DROP TABLE IF EXISTS `items`;
 
 CREATE TABLE `items` (
   `id` MEDIUMINT(9) NOT NULL AUTO_INCREMENT,
@@ -21,7 +21,7 @@ INSERT INTO `items` VALUES
   (null, 'Paper Tray', 'large', 30, 'blue');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `users`
+DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `username` VARCHAR(255) NOT NULL,

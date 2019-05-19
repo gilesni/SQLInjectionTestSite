@@ -39,12 +39,12 @@ app.get('/', (req, res, next) => {
 
 app.post('/send', (req, res, next) => {
   const mysqlpool = req.app.locals.mysqlPool;
-  uname = req.username;
-  pwd = req.password;
+  uname = req.body.username;
+  pwd = req.body.password;
   checkLogin(mysqlpool, uname, pwd)
     .then((results) => {
       if (!(results.username == null)) {
-        res.redirect('/loggedIn.html').json(results);
+        res.status(200).json(results);
       } else {
         res.status(401).json({
           err: "Invalid username or password",
@@ -67,16 +67,19 @@ function checkLogin (mysqlpool, uname, pwd) {
       if (err) {
         reject(err);
       } else {
-        var resultsObj = {
-          username: results.username,
-          password: results.password,
-          secret: results.secret,
-          sqlString: sqlString
-        };
-        console.log('username: ' + results.username);
-        console.log('password: ' + results.password);
-        console.log('secret: ' + results.secret);
-        console.log('sqlString: ' + sqlString);
+        if (results[0]){
+          var resultsObj = {
+            username: results[0].username,
+            password: results[0].password,
+            secret: results[0].secret,
+            sqlString: sqlString
+          };
+        } else {
+          resultsObj = {
+            username: null,
+            sqlString: sqlString
+          };
+        }
         resolve(resultsObj);
       }
     });

@@ -56,8 +56,17 @@ function sendData() {
     url: url + "/send",
     method: "post",
     data: data,
-    success: () => {
-      console.log("Sent object: " + data);
+    success: (response) => {
+      console.log("Sent object: " + response);
+      console.log("username: " + response.username);
+      console.log("password: " + response.password);
+      console.log("secret: " + response.secret);
+      console.log("sqlString: " + response.sqlString);
+    },
+    error: (response) => {
+      console.log(response);
+      console.log("err: " + response.responseJSON.err);
+      console.log("sqlString: " + response.responseJSON.sqlData.sqlString);
     }
   });
 }
