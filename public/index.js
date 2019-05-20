@@ -90,9 +90,11 @@ $('#login-btn').click(sendData);
 function resetPage() {
 	$('#post-info-container').addClass('hidden');
 	$('#pre-info-container').removeClass('hidden');
-	$('#uname-input').val("");
-	$('#pwd-input').val("");
-
+	var checked = $("input[name=clear-textbox]").prop('checked');
+	if(checked) {
+		$('#uname-input').val("");
+		$('#pwd-input').val("");
+	}
 }
 
 $('#reset-btn').click(resetPage);
