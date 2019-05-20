@@ -62,13 +62,30 @@ function sendData() {
       console.log("password: " + response.password);
       console.log("secret: " + response.secret);
       console.log("sqlString: " + response.sqlString);
-    },
+	  $('#request-sent-text').text(response.sqlString);
+	  $('#response-text').text("Username: " + response.username + ", Password: " + response.password + ", Secret: " + response.secret);
+  	},
     error: (response) => {
       console.log(response);
       console.log("err: " + response.responseJSON.err);
       console.log("sqlString: " + response.responseJSON.sqlData.sqlString);
+	  $('#request-sent-text').text(response.responseJSON.sqlData.sqlString);
+	  $('#response-text').text(response.responseJSON.err);
     }
   });
 }
 
 $('#login-btn').click(sendData);
+
+function changeRequestState() {
+	$('#request-sent').toggleClass('hidden');
+	$('#request-sent-text').toggleClass('hidden');
+}
+
+function changeResponseState() {
+	$('#response').toggleClass('hidden');
+	$('#response-text').toggleClass('hidden');
+}
+
+$("input[name=sql-request]").change(changeRequestState);
+$("input[name=sql-response]").change(changeResponseState);

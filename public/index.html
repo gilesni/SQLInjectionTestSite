@@ -22,14 +22,14 @@
       <input type="password" id="pwd-input" name="Password" placeholder="Insert Password">
       <input id="login-btn" type="submit" name="Log In" value="Log In">
 
-      <h3 class="hidden" id="string-sent">SQL String Sent:</h3>
-      <p class="hidden" id="string-sent-text"></p>
+	  <div class="info-container">
+	      <h3 class="hidden" id="request-sent"> -SQL String Executed:</h3>
+	      <p class="hidden" id="request-sent-text"></p>
 
-      <h3 class="hidden" id="string-executed">SQL String executed</h3>
-      <p class="hidden" id="string-executed-text"></p>
+	      <h3 class="hidden" id="response"> -Response</h3>
+	      <p class="hidden" id="response-text"></p>
+	  </div>
 
-      <h3 class="hidden" id="response">Response</h3>
-      <p class="hidden" id="response-text"></p>
     </main>
 
     <footer class="hidden tools-container">
@@ -144,13 +144,12 @@
             <h2 class="help-text">Examples</h2>
             <h3 class="help-text">DROP TABLE users</h3>
             <p class="help-text">This will remove the table of users and all their data from the database. <i>SO BE CAREFUL.</i></p>
-          </div>
+		</div>string
         </div>
       </div>
       <div id="options-viewer-window" class="hidden">
-        <input type="radio" name="sql-string" value="sql-string">See SQL String <br>
-        <input type="radio" name="sql-results" value="sql-results">See SQL Results <br>
-        <input type="radio" name="sql-inputs" value="sql-inputs">See SQL Inputs
+        <input type="checkbox" name="sql-request" value="sql-string">See SQL String <br>
+        <input type="checkbox" name="sql-response" value="sql-response">See SQL Results <br>
       </div>
     </footer>
     <button id="open-btn" class="open-btn">Open Tools</button>

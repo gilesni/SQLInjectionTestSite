@@ -42,6 +42,7 @@ p {
   margin-right: 20%;
   min-width: 50%;
   padding: 5%;
+  scroll-behavior: auto;
 }
 
 input[type=text], input[type=password] {
