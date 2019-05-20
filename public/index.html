@@ -13,7 +13,7 @@
     </header>
 
     <main class="injection-container">
-      <div class="info-container">
+      <div class="info-container" id="pre-info-container">
         <h3>Username</h3>
         <input type="text" id="uname-input" name="Username" placeholder="Insert Username">
         <h3>Password</h3>
@@ -21,19 +21,19 @@
         <input id="login-btn" type="submit" name="Log In" value="Log In">
       </div>
 
-      <div class="info-container hidden">
-        <center> <h3>Log in successful</h3> </center>
-        <h3>Secret: </h3>
+      <div class="info-container hidden" id="post-info-container">
+        <center id="login-result"> <h3></h3> </center>
+		<div class="request-respose-container">
+  	      <h3 id="request-sent"> -SQL String Executed:</h3>
+  	      <p id="request-sent-text"></p>
+
+  	      <h3 id="response"> -Response</h3>
+  	      <p id="response-text"></p>
+  	  </div>
         <button class="reset" id="reset-btn" type="button">Log in again</button>
       </div>
 
-	  <div class="info-container">
-	      <h3 class="hidden" id="request-sent"> -SQL String Executed:</h3>
-	      <p class="hidden" id="request-sent-text"></p>
 
-	      <h3 class="hidden" id="response"> -Response:</h3>
-	      <p class="hidden" id="response-text"></p>
-	  </div>
 
     </main>
 
@@ -153,8 +153,8 @@
         </div>
       </div>
       <div id="options-viewer-window" class="hidden">
-        <input type="checkbox" name="sql-request" value="sql-string">See SQL String <br>
-        <input type="checkbox" name="sql-response" value="sql-response">See SQL Results <br>
+        <input type="checkbox" name="sql-request" value="sql-string" checked>See SQL String <br>
+        <input type="checkbox" name="sql-response" value="sql-response" checked>See SQL Results <br>
       </div>
     </footer>
     <button id="open-btn" class="open-btn">Open Tools</button>

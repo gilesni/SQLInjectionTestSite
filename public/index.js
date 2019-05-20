@@ -62,6 +62,9 @@ function sendData() {
       console.log("password: " + response.password);
       console.log("secret: " + response.secret);
       console.log("sqlString: " + response.sqlString);
+	  $('#pre-info-container').addClass('hidden');
+	  $('#post-info-container').removeClass('hidden');
+	  $('#login-result').text("Log in Successful");
 	  $('#request-sent-text').text(response.sqlString);
 	  $('#response-text').text("Username: " + response.username + ", Password: " + response.password + ", Secret: " + response.secret);
   	},
@@ -69,6 +72,9 @@ function sendData() {
       console.log(response);
       console.log("err: " + response.responseJSON.err);
       console.log("sqlString: " + response.responseJSON.sqlData.sqlString);
+	  $('#pre-info-container').addClass('hidden');
+	  $('#post-info-container').removeClass('hidden');
+	  $('#login-result').text("Log in Failed");
 	  $('#request-sent-text').text(response.responseJSON.sqlData.sqlString);
 	  $('#response-text').text(response.responseJSON.err);
     }
@@ -76,6 +82,17 @@ function sendData() {
 }
 
 $('#login-btn').click(sendData);
+
+function resetPage() {
+	$('#post-info-container').addClass('hidden');
+	$('#pre-info-container').removeClass('hidden');
+	$('#uname-input').val("");
+	$('#pwd-input').val("");
+
+}
+
+$('#reset-btn').click(resetPage);
+
 
 function changeRequestState() {
 	$('#request-sent').toggleClass('hidden');
