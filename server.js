@@ -60,6 +60,14 @@ app.post('/send', (req, res, next) => {
     });
 });
 
+function escapeInput(userInput) {
+    for (var i = 0; i < userInput.length; i++) {
+        if (possibleEscapeChars.contains(userInput[i])) {
+            insertEscapeAt(userInput, i);
+        }
+    }
+}
+
 function checkLogin (mysqlpool, uname, pwd) {
   return new Promise((resolve, reject) => {
     var sqlString = "SELECT * FROM users WHERE username='" + uname + "' AND password='" + pwd + "'";
