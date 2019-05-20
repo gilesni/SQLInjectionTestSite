@@ -5,9 +5,6 @@
     <title>SQL Injection</title>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
-
-
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -16,11 +13,19 @@
     </header>
 
     <main class="injection-container">
-      <h3>Username</h3>
-      <input type="text" id="uname-input" name="Username" placeholder="Insert Username">
-      <h3>Password</h3>
-      <input type="password" id="pwd-input" name="Password" placeholder="Insert Password">
-      <input id="login-btn" type="submit" name="Log In" value="Log In">
+      <div class="info-container">
+        <h3>Username</h3>
+        <input type="text" id="uname-input" name="Username" placeholder="Insert Username">
+        <h3>Password</h3>
+        <input type="password" id="pwd-input" name="Password" placeholder="Insert Password">
+        <input id="login-btn" type="submit" name="Log In" value="Log In">
+      </div>
+
+      <div class="info-container hidden">
+        <center> <h3>Log in successful</h3> </center>
+        <h3>Secret: </h3>
+        <button class="reset" id="reset-btn" type="button">Log in again</button>
+      </div>
 
 	  <div class="info-container">
 	      <h3 class="hidden" id="request-sent"> -SQL String Executed:</h3>

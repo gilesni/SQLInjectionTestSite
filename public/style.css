@@ -70,6 +70,19 @@ input[type=submit] {
   border-radius: 5px;
   cursor: pointer;
 }
+#reset-btn {
+  width: 100%;
+  background-color: #D73F09;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px 0px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#reset-btn:hover {
+  background-color: grey;
+}
 
 input[type=submit]:hover {
   background-color: grey;
@@ -144,4 +157,17 @@ button:hover {
   position: absolute;
   right: 0px;
   bottom: 0px;
+}
+
+.info-container {
+  padding: 2em 1em 3em;
+  background-color: white;
+
+}
+
+.reset {
+  position: relative;
+  right: 0px;
+  bottom: 0px;
+  background-color: #D73F09;
 }
