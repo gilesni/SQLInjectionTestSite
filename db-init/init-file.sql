@@ -35,5 +35,6 @@ INSERT INTO `users` VALUES
   ('rosulek', 'hunter2', 'crypto'),
   ('xXkiller269Xx', 'blunder years', 'breniser'),
   ('hooyah1775', 'navy', 'rotc'),
-  ('hoibbes', 'p4ssw0rd', 'trombone');
+  ('hoibbes', 'p4ssw0rd', 'trombone'),
+  ('admin', 'password', 'root');
 UNLOCK TABLES;
