@@ -12,11 +12,13 @@ function makeViewerActive() {
   $('#options-viewer-window').addClass('hidden');
   $('#viewer-tab-container').removeClass('hidden');
   $('#syntax-viewer-window').removeClass('hidden');
-  $('.viewer-tab-btn').click(makeViewerTabActive);
   $('#options-btn').removeClass('active');
   $('#viewer-btn').addClass('active');
-}
+  $('#select-btn').addClass('active');
+  $('#select-content').removeClass('hidden');
 
+}
+$('.viewer-tab-btn').click(makeViewerTabActive);
 $('#viewer-btn').click(makeViewerActive);
 
 function makeOptionsActive() {
@@ -40,6 +42,8 @@ function openToolbar() {
   $(this).addClass('hidden');
   $('footer').removeClass('hidden');
   $('#hide-btn').one('click', hideToolbar);
+  $('#viewer-btn').addClass('active');
+  makeViewerActive();
 }
 
 $('#open-btn').one('click', openToolbar);
@@ -106,3 +110,13 @@ function changeResponseState() {
 
 $("input[name=sql-request]").change(changeRequestState);
 $("input[name=sql-response]").change(changeResponseState);
+
+
+
+function changeModal() {
+  $('#modal').toggleClass('hidden');
+  $('#modal-backdrop').toggleClass('hidden');
+}
+
+$('#modal-close').click(changeModal);
+$('#about-btn').click(changeModal);
